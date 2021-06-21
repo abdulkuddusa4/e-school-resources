@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <style>
         a{
@@ -20,95 +20,143 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
             border-radius: 25px;
             /*border-radius: 5%;*/
         }
-        .nav-item-style a{
+        /*.nav-item-style a{
             color:black;
             display: inline-block;
             height: 100%;
             padding-top: 8%;
             font-weight: 550;
-        }
+        }*/
         .basic-link-config{
-            color:white !important; 
-            background: #21b573;  
-            text-align:center; 
+            color:Black !important; 
+            /*background: #21b573;  */
+            text-align:left; 
             height:40px; 
             border-radius:25px; 
             padding-top:5px;
             letter-spacing: 0.1px;
             display: inline-block;
             transition: all 1s;
+            display: inherit;
         }
 
         .basic-link-config:hover{
             color:black !important;
             background: green;
             transform-origin: left;
+            text-align:center;
+        }
+        .link-highlighted{
+          background: #21b573; 
+          color:white !important;
+          text-align: center;
         }
         .icon-size{
             height:85px;
             width: 66px;
         }
         .nav-padding{padding-left: 18.5%; padding-right: 11%;}
+        @media screen and (min-width: 993px){
+          .navbar-width{width: 992px;}
+        }
         @media screen and (max-width: 992px){
-            .text-mdevice-center{text-align: center;}
-            .basic-link-config{
-                color:white !important; 
-                background: #21b573;  
-                text-align:center; 
-                height:40px; 
-                border-radius:25px; 
-                padding-top:5px;
-                letter-spacing: 0.1px;
-                display: inline-block;
-                transition: all 1s;
-            }
-            .mg-md-auto{margin:auto;}
-            /*.nav-padding{padding-left:10%;padding-right: 5%;}*/
-            .footer-list-margin{
-                margin-top: 30px;
-            }
+          .navbar-width{width: 576px;}
+          .nav-padding{padding-left: 10%; padding-right: 10%;}
+          .text-mdevice-center{text-align: center;}
+          .mg-md-auto{margin:auto;}
+          /*.nav-padding{padding-left:10%;padding-right: 5%;}*/
+          .footer-list-margin{margin-top: 30px;}
         }
         @media screen and (max-width: 576px) {
-            .footer-list-margin{
-                margin-top: 30px;
-            }
+          .navbar-width{width:450px;}
+          .nav-padding{padding-left: 5%; padding-right: 5%;}
+          .footer-list-margin{margin-top: 30px;}
         }
     </style>
     <title>Hello, world!</title>
   </head>
   <body style="background: honeydew">
-    <nav class="navbar navbar-expand-lg d-flex flex-row nav-padding">
-        <!-- <div class="row d-flex"> -->
-            <div class="navbar-header mg-md-auto">
+    <!-- NAVBAR SECTION STARTS HERE -->
+    <nav class="navbar navbar-expand-lg d-flex flex-row mx-auto">
+        <div class="container-fluid navbar-width" style="">
                 <a href="" class="navbar-brand">
                     <img src="images/logo.png" alt="" style="height: 50px; width: 150px;">
                 </a>
-            </div>
-            <div class="container d-flex justify-content-lg-end justify-content-md-center justify-content-sm-center justify-content-center">
-                <ul class="nav d-flex flex-lg-row flex-md-row flex-sm-column flex-column">
+            <button class="navbar-toggler d-block d-lg-none order-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_navigation_bar" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon">
+                
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-justify" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M2 12.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5zm0-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"></path>
+                        </svg>
+                    
+              </span>
+            </button>
+
+
+
+            <!-- navbar for small and mediam device started -->
+            <div class="offcanvas offcanvas-start" id="offcanvas_navigation_bar">
+              <div class="offcanvas-header">
+                   <button class="navbar-toggler d-block d-lg-none sticky-top ms-auto text-danger" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas_navigation_bar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon">&times;      
+                </span>
+                </button>         
+              </div>
+              <div class="offcancvas-body mx-auto">
+                
+                <ul class="navbar-nav ms-5 flex-column">
                   <li class="nav-item nav-item-style">
-                    <a class="nav-link" aria-current="page" href="#">Books</a>
+                  <a class="nav-link basic-link-config" aria-current="page" href="#">
+                      Books</a>
                   </li>
                   <li class="nav-item nav-item-style">
-                    <a class="nav-link" href="#">Courses</a>
+                    <a class="nav-link basic-link-config" href="#">Courses</a>
                   </li>
                   <li class="nav-item nav-item-style">
-                    <a class="nav-link" href="#">Others</a>
+                    <a class="nav-link basic-link-config" href="#">Others</a>
                   </li>
                   <li class="nav-item nav-item-style">
-                    <a class="nav-link" href="#">Blog</a>
+                    <a class="nav-link basic-link-config" href="#">Blog</a>
                   </li>
                   
                   <li class="nav-item nav-item-style" style="background:#21b573">
-                    <a class="nav-link basic-link-config" href="#" tabindex="-1" aria-disabled="true" style="">Sign in</a>
+                    <a class="nav-link basic-link-config link-highlighted" href="#" tabindex="-1" aria-disabled="true" style="">Sign in</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- navbar for small and mediam device ended -->
+
+            <!-- navbar for large device started -->
+            <div class="navbar d-none d-lg-block">
+                <ul class="nav d-flex flex-lg-row flex-md-row flex-sm-column flex-column">
+                  <li class="nav-item nav-item-style">
+                    <a class="nav-link basic-link-config" aria-current="page" href="#">Books</a>
+                  </li>
+                  <li class="nav-item nav-item-style">
+                    <a class="nav-link basic-link-config" href="#">Courses</a>
+                  </li>
+                  <li class="nav-item nav-item-style">
+                    <a class="nav-link basic-link-config" href="#">Others</a>
+                  </li>
+                  <li class="nav-item nav-item-style">
+                    <a class="nav-link basic-link-config" href="#">Blog</a>
+                  </li>
+                  
+                  <li class="nav-item nav-item-style" style="background:#21b573">
+                    <a class="nav-link basic-link-config link-highlighted" href="#" tabindex="-1" aria-disabled="true" style="">Sign in</a>
                   </li>
                 </ul>
             </div>
-        <!-- </div> -->
+            <!-- navbar for large device ended -->
+        </div>
     </nav>
+    <!-- NAVBAR SECTION ENDS HERE -->
+
+    <!-- CONTENT SECTION-1 STARTS HERE -->
     <div class="container-fluid" style="margin-top:80px;width:70%;margin-left:18.5%;margin-right:0%;">
         <div class="row">
-            <div class="col-lg-5 col-md-12 text-mdevice-center">
+            <div class="col-lg-5 col-md-12 mx-auto text-center text-md-start">
                 <div class="row" style="margin-top: 20px;">
                     <span style="color: #fd4b19;">are you ready to learn?</span>
                 </div>
@@ -119,7 +167,7 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
                     <p class="text-muted">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quae sunt placeat animi a, ducimus minus tempore quaerat quibusdam amet dolor!</p>
                 </div>
                 <div class="row" style="margin-top: 20px; padding-left: 0px;">
-                    <p><a href="" class="basic-link-config"style="width: 40%;">Get Started</a></p>
+                    <p><a href="" class="basic-link-config link-highlighted mx-auto mx-md-0"style="width: 40%;">Get Started</a></p>
                 </div>
             </div>
             <div class="col-lg-7 col-md-12" style="">
@@ -127,6 +175,9 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
             </div>
         </div>
     </div>
+    <!-- CONTENT SECTION-1 ENDS HERE -->
+
+
     <div class="container-fluid" style="background:white; padding-bottom:100px;">
         <div class="container" style="margin-top:80px;width:80%;">
             <div class="row" style="margin-top:80px;">
@@ -172,6 +223,7 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
             <div class="row">
                 <h2 class="text-center h3" style="font-weight: bold; color: #413960;">Online Courses</h2>
             </div>
+            <!-- fsdfsdfdsf -->
             <div class="row" style="margin-top: 80px;">
                 <div class="col-lg-4">
                     <div class="card" style="width: 100%; border-style:outset;">
@@ -181,7 +233,7 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
                         <p class="text-muted text-mdevice-center" style="font-size:15px;">Designation</p>
                       </div>
                       <div class="card-body text-mdevice-center" style="padding-left:30px;">
-                        <a href="#" class=" basic-link-config" style="width: 40%;">Buy Course</a>
+                        <a href="#" class=" basic-link-config link-highlighted mx-lg-0 mx-auto" style="width: 40%;">Buy Course</a>
                       </div>
                       <div class="row" style="padding-left:30px;">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-8">
@@ -203,7 +255,8 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
                         <p class="text-muted text-mdevice-center" style="font-size:15px;">Designation</p>
                       </div>
                       <div class="card-body text-mdevice-center" style="padding-left:30px;">
-                        <a href="#" class=" basic-link-config" style="width: 40%;">Buy Course</a>
+                        <a href="#" class="basic-link-config link-highlighted mx-lg-0 mx-auto
+                        " style="width: 40%;">Buy Course</a>
                       </div>
                       <div class="row" style="padding-left:30px;">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-8">
@@ -225,7 +278,7 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
                         <p class="text-muted text-mdevice-center" style="font-size:15px;">Designation</p>
                       </div>
                       <div class="card-body text-mdevice-center" style="padding-left:30px;">
-                        <a href="#" class=" basic-link-config" style="width: 40%;">Buy Course</a>
+                        <a href="#" class=" basic-link-config link-highlighted mx-lg-0 mx-auto" style="width: 40%;">Buy Course</a>
                       </div>
                       <div class="row" style="padding-left:30px;">
                           <div class="col-lg-8 col-md-8 col-sm-8 col-8">
@@ -309,10 +362,6 @@ XC    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstra
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        
-    </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
